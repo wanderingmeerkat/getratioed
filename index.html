@@ -5,25 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Hello World.">
     <title>You Just Got Ratioed!</title>
+    <style>
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
-    <iframe 
-        id="rickroll" 
-        width="560" 
-        height="315" 
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen>
-    </iframe>
-
-    <script>
-        document.addEventListener("click", function() {
-            let iframe = document.getElementById("rickroll");
-            iframe.src += "&autoplay=1"; // Reloads with autoplay
-        }, { once: true }); // Only triggers once
-    </script>
+    <div class="video-container">
+        <iframe 
+            id="rickroll" 
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+        </iframe>
+    </div>
 </body>
 </html>
